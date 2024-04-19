@@ -1,66 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
-    
+
     <style data-typed-js-cursor-css="true">
-        .typed-cursor{
+      .typed-cursor {
+        opacity: 1;
+      }
+      .typed-cursor.typed-cursor--blink {
+        animation: typedjsBlink 0.7s infinite;
+        -webkit-animation: typedjsBlink 0.7s infinite;
+        animation: typedjsBlink 0.7s infinite;
+      }
+      @keyframes typedjsBlink {
+        50% {
+          opacity: 0;
+        }
+      }
+      @-webkit-keyframes typedjsBlink {
+        0% {
           opacity: 1;
         }
-        .typed-cursor.typed-cursor--blink{
-          animation: typedjsBlink 0.7s infinite;
-          -webkit-animation: typedjsBlink 0.7s infinite;
-                  animation: typedjsBlink 0.7s infinite;
+        50% {
+          opacity: 0;
         }
-        @keyframes typedjsBlink{
-          50% { opacity: 0.0; }
+        100% {
+          opacity: 1;
         }
-        @-webkit-keyframes typedjsBlink{
-          0% { opacity: 1; }
-          50% { opacity: 0.0; }
-          100% { opacity: 1; }
-        }
-      </style>
-
-    <style>
-        @keyframes softBounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0);
-            }
-            40% {
-                transform: translateY(-30px);
-            }
-            60% {
-                transform: translateY(-5px);
-            }
-        }
-        .terminal-window {
-            animation: softBounce 1s ease-in;
-        }
+      }
     </style>
 
-</head>
+    <style>
+      @keyframes softBounce {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+          transform: translateY(0);
+        }
+        40% {
+          transform: translateY(-30px);
+        }
+        60% {
+          transform: translateY(-5px);
+        }
+      }
+      .terminal-window {
+        animation: softBounce 1s ease-in;
+      }
+    </style>
+  </head>
 
-    <body>
+  <body>
     <div class="terminal-window">
-        <pre id="terminal-output"></pre>
-        <div class="terminal-window mx-2 w-full xl:w-4/5 p-6 text-base sm:text-sm md:text-base rounded-md shadow-2xl bg-gray-800 max-h-80">
-            <div class="relative">
-                <div class="absolute -top-5 -right-5">
-                    <!-- Close button -->
-                    <button title="Close" class="text-gray-600 w-8 h-8 rounded-full flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-                    </button>
-                </div>
-            </div>
-            <pre class="text-gray-300 whitespace-pre" id="terminal-output"></pre>
-            <script src="terminal_input.js"></script>
+      <pre id="terminal-output"></pre>
+      <div
+        class="terminal-window mx-2 w-full xl:w-4/5 p-6 text-base sm:text-sm md:text-base rounded-md shadow-2xl bg-gray-800 max-h-80">
+        <div class="relative">
+          <div class="absolute -top-5 -right-5">
+            <!-- Close button -->
+            <button
+              title="Close"
+              class="text-gray-600 w-8 h-8 rounded-full flex items-center justify-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                class="w-4 h-4"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                ></path>
+              </svg>
+            </button>
+          </div>
         </div>
+        <script src="terminal_input.js"></script>
+        <pre class="text-gray-300 whitespace-pre" id="terminal-output"></pre>
+      </div>
     </div>
-    
-</body>
+    <script src="node_modules/tailwindcss"></script>
+    <script src="node_modules/typed.js"></script>
+  </body>
 </html>
